@@ -1,0 +1,37 @@
+<div class="container-fluid max-width-900">
+
+  <!-- Detalle de los docentes -->
+  <div *ngIf="selected" class="row row-cols-1">
+    <div>
+    <app-detalle-docente [docente]="docenteSelected"></app-detalle-docente>
+</div>
+  </div>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Cargo</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Asignatura</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Facultad</th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngFor="let docente of docentes">
+      <tr>
+        <td (click)="onSelected(docente)">{{docente.cargo}}</td>
+        <td (click)="onSelected(docente)">{{docente.nombre}}</td>
+        <td (click)="onSelected(docente)">{{docente.apellido}}</td>
+        <td (click)="onSelected(docente)">{{docente.telefono}}</td>
+        <td (click)="onSelected(docente)">{{docente.asignatura}}</td>
+        <td (click)="onSelected(docente)">{{docente.correo}}</td>
+        <td (click)="onSelected(docente)">{{docente.facultad}}</td>
+        <td (click)="borrarDocente(docente)"><img src="../../../assets/favicon.ico"  alt="borrar asignatura"/></td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>
