@@ -4,7 +4,7 @@ import { DocentesRoutingModule } from './docentes-routing.module';
 import {ListarDocenteComponent} from "./listar-docente/listar-docente.component";
 import {CrearDocenteComponent} from "./crear-docente/crear-docente.component";
 import {DetalleDocenteComponent} from "./detalle-docente/detalle-docente.component";
-
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import {DetalleDocenteComponent} from "./detalle-docente/detalle-docente.compone
   ],
   imports: [
     CommonModule,
-    DocentesRoutingModule
+    DocentesRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class DocentesModule { }

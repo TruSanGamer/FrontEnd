@@ -1,0 +1,35 @@
+.table {
+  width: 802px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  font-family: Montserrat;
+  font-size: 14px;
+  border-collapse: collapse;
+  opacity: 1;
+  position: absolute;
+  top: 215px;
+  left: 300px;
+  overflow: visible;
+}
+/* Define el tamaño del modal */
+
+
+/*
+tr:nth-child(even) {
+  background-color: #e1dfdf;
+}
+
+tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+th {
+  color: black;
+}
+*/
+
+
+
+

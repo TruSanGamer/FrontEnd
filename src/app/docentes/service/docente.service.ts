@@ -18,4 +18,8 @@ export class DocenteService {
   }
 
 
+  crearDocente(docente: Docente):Observable<Docente> {
+    return this.httpClient.post<Docente>(this.baseUrl, docente);
+
+  }
 }

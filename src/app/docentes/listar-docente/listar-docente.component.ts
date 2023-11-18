@@ -65,25 +65,26 @@ onSelected(docente: Docente){
 }
   borrarDocente(docente: Docente) {
 
-    Swal.fire({
-      title: "Estas seguro?",
-      text: "Usted no puede revertir eso!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, borra el curso!"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire({
-          title: "Eliminado!",
-          text: "El curso ha sido eliminado.",
-          icon: "success"
-        });
-      }
-    });
-    //this.routerPath.navigate(['/curso/detalle', curso.id]); Estrategia redireccionando la ruta
+      Swal.fire({
+        title: "Estas seguro?",
+        text: "Usted no puede revertir eso!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d2933f",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, borra el usuario!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Eliminado!",
+            text: "El usuario ha sido eliminado.",
+            icon: "success"
+          });
+        }
+      });
+      //this.routerPath.navigate(['/curso/detalle', curso.id]); Estrategia redireccionando la ruta
+    }
   }
-}
+
 
 
