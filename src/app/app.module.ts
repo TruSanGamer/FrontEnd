@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import {RouterModule, Routes} from "@angular/router";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+
 // @ts-ignore
 import {SweetAlert2Module} from "@sweetalert2/ngx-sweetalert2";
 
