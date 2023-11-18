@@ -1,0 +1,28 @@
+<form [formGroup]="crearProgramasForm" (ngSubmit)="crearProgramas(crearProgramasForm.value)">
+  <div class="content-form">
+    <div class="row rowfirst">
+      <label for="nombre">Nombre del programa</label>
+      <input id = "nombre"
+             type="text"
+             name="nombre"
+             placeholder="Escriba el nombre del programa aquí">
+    </div>
+
+    <div class="row rowsec">
+      <div class="col col-12">
+        <label for="id">ID del programa</label>
+        <input id = "id"
+               type="text"
+               name="id"
+               placeholder="Ingrese el código del programa"
+               formControlName="id"
+               class="form-control">
+      </div>
+    </div>
+
+    <div class="col col-4">
+      <button type="submit" class="btn btn-primaryCA">Crear programa</button>
+      <button type="button" class="btn btn-dangerCA" (click)="cancelarCrearAsignatura()">Cancelar</button>
+    </div>
+  </div>
+</form>
