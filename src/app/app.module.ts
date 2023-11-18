@@ -15,7 +15,6 @@ const rutas: Routes =[
   {path: 'header', component: HeaderComponent},
   {path: 'footer', component: FooterComponent},
   {path: '', loadChildren: () => import('./programas/programas.module').then(m => m.ProgramasModule)},
-  {path: '',}
 
 ]
 @NgModule({
