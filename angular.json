@@ -15,7 +15,7 @@
           "options": {
             "outputPath": "dist/front-end",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -34,7 +34,8 @@
               "node_modules/@popperjs/core/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/sweetalert2/dist/sweetalert2.min.js"
-            ]},
+            ]
+          },
           "configurations": {
             "production": {
               "budgets": [
@@ -102,6 +103,6 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "f5316d01-cc00-4c07-866f-548b05a9bfa6"
   }
 }
