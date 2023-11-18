@@ -17,7 +17,7 @@ export class CrearProgramasComponent implements OnInit{
   public formBuilder!: FormBuilder;
 
 
-  constructor(public router: Router, formBuilder:FormBuilder, private programaService: ProgramasService) {
+  constructor(public router: Router, formBuilder:FormBuilder, private programasService: ProgramasService) {
     this.formBuilder = formBuilder;
   }
 
