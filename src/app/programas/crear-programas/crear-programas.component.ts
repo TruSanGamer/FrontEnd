@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AsignaturaService} from "../service/asignatura.service";
+import {ProgramasService} from "../service/programas.service";
 import {Router} from "@angular/router";
 import Swal from "sweetalert2";
-import {Asignatura} from "../model/asignatura";
+import {Programas} from "../model/programas";
 
 
 @Component({
