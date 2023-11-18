@@ -13,10 +13,9 @@
   opacity: 1;
   font-size: 14px;
 }
-
 .posicion-logout svg{
   width: 90px;
   position: absolute;
-  top: 580px;
-  left: 150px;
+  top: 577px;
+  left: 140px;
 }

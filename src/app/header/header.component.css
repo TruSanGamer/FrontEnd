@@ -1,3 +1,4 @@
+
 .home {
   width: 100%;
   height: 100vh;
@@ -9,7 +10,11 @@
   overflow: hidden;
 }
 
-html, body {
+
+th, td {
+  border: 1px solid black; /* Bordes sólidos de 1px de grosor en color negro */
+}
+.html, body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -68,6 +73,7 @@ html, body {
   text-align: left;
 }
 
+
 .content {
 
   height: 15px;
@@ -78,10 +84,13 @@ html, body {
   position: absolute;
   top: 100px;
   left: 400px;
-  overflow: visible;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+
 }
 
 /*botón*/
+
 
 .content table{
   width: 1070px;
@@ -94,17 +103,7 @@ html, body {
   margin-bottom: 20px;
 }
 
-th[scope="col"] {
-  font-size: 14px;
-  left: 0px; /* Adjust the value as per your requirement */
-  width: 5%;
-}
 
-td {
-  font-size: 14px;
-  left: 0px; /* Adjust the value as per your requirement */
-  width: 10%;
-}
 
 .sidebar {
   width: 270px;
@@ -145,7 +144,7 @@ td {
 
 .posicion-sidebar {
   width: 193px;
-  height: 686px;
+  height: 100vh;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -363,7 +362,7 @@ td {
 
 .anadir-button{
   width: 200px;
-  height: 30px;
+  height: 40px;
   padding: 10px;
   text-align: center;
   line-height: 0px;
