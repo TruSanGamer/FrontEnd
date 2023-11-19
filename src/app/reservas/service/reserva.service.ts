@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class ReservaService {
-  private baseUrl: string = "https://gist.githubusercontent.com/jonathanColorado/a3a0e4c564caab179140a4a6f8acb887/raw/0f48f012752aec78e1b8610713059d152630037a/gistfile1.txt"
+  private baseUrl: string = "https://gist.githubusercontent.com/jonathanColorado/42875592add75854ae14c20948bd6a08/raw/3b2d0a837c772d93a580c0561b2d7056eb0fe3b2/gistfile1.txt"
 
     constructor(private httpClient: HttpClient) {
 

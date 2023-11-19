@@ -2,7 +2,9 @@
  *Modelo de datos para las asignaturas
  */
 export class Reserva{
-  public id!: number;
-  public nombre!: string;
+  public fehaInicio!: number;
+  public sala!: string;
+  public fechaFinalizacion!: number;
+  public detalle!: string;
 
 }

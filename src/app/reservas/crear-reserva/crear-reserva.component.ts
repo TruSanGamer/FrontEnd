@@ -32,7 +32,7 @@ export class CrearReservaComponent implements OnInit{
         console.log(reserva);
         Swal.fire(
           'Asignatura creada',
-          `La asignatura ${reserva.nombre} ha sido creada con éxito`,
+          `La asignatura ${reserva.sala} ha sido creada con éxito`,
           'success'
         );
         this.crearReservaForm.reset();

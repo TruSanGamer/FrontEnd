@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 })
 export class ListarReservaComponent implements OnInit {
   public reservas: Array<Reserva> = [];
-  public nombreAsignatura!: string;
+  public nombreResrva!: string;
   public reservaSelected!: Reserva;
   public selected: boolean = false;
 
@@ -28,17 +28,21 @@ export class ListarReservaComponent implements OnInit {
     this.reservaSelected = reserva;
     this.selected = true
 
-    Swal.fire('Detalle de la asignatura', '<table class="table">\n' +
+    Swal.fire('Detalle de la reserva', '<table class="table">\n' +
       '  <thead>\n' +
       '  <tr>\n' +
-      '    <th scope="col">Nombre</th>\n' +
-      '    <th scope="col">ID de la asignatura</th>\n' +
+      '    <th scope="col">Sala</th>\n' +
+      '    <th scope="col">Fecha de Inicio</th>\n' +
+      '    <th scope="col">Fecha de Finalizacion</th>\n' +
+      '    <th scope="col">Detalles</th>\n' +
       '  </tr>\n' +
       '  </thead>\n' +
       '  <tbody>\n' +
       '    <tr>\n' +
-      '      <td>' + this.reservaSelected.nombre + '</td>\n' +
-      '      <td>' + this.reservaSelected.id + '</td>\n' +
+      '      <td>' + this.reservaSelected.sala + '</td>\n' +
+      '      <td>' + this.reservaSelected.fehaInicio + '</td>\n' +
+      '      <td>' + this.reservaSelected.fechaFinalizacion + '</td>\n' +
+      '      <td>' + this.reservaSelected.detalle + '</td>\n' +
       '    </tr>\n' +
       '  </tbody>\n' +
       '</table>', 'success');
@@ -52,12 +56,12 @@ export class ListarReservaComponent implements OnInit {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, borra el curso!"
+      confirmButtonText: "Yes, borra la reserva!"
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
           title: "Eliminado!",
-          text: "El curso ha sido eliminado.",
+          text: "La Reserva ha sido elimanda.",
           icon: "success"
         });
       }

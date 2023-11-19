@@ -1,27 +1,49 @@
 <form [formGroup]="crearReservaForm" (ngSubmit)="crearReserva(crearReservaForm.value)">
   <div class="content-form">
     <div class="row rowfirst">
-      <label for="nombre">Nombre de la asignatura</label>
-      <input id = "nombre"
+      <label for="sala">Sala</label>
+      <input id = "sala"
              type="text"
-             name="nombre"
-             placeholder="Escriba el nombre de la asignatura aquí">
+             name="sala"
+             placeholder="Escriba la sala aqui">
     </div>
 
     <div class="row rowsec">
       <div class="col col-12">
-        <label for="id">ID de la asignatura</label>
-        <input id = "id"
+        <label for="fechaInicio">Fecha de Inicio</label>
+        <input id = "fechaInicio"
                type="text"
-               name="id"
-               placeholder="Ingresa el código de la asignatura"
+               name="fechaInicio"
+               placeholder="Ingresa la Fecha de Inicio"
+               formControlName="id"
+               class="form-control">
+      </div>
+    </div>
+    <div class="row rowsec">
+      <div class="col col-12">
+        <label for="fechaFinalizacion">Fecha de Finaizacion</label>
+        <input id = "fechaFinalizacion"
+               type="text"
+               name="fechaFinalizacion"
+               placeholder="Ingresa la Fecha de Finalizacion"
+               formControlName="id"
+               class="form-control">
+      </div>
+    </div>
+    <div class="row rowsec">
+      <div class="col col-12">
+        <label for="detalle">Detalle</label>
+        <input id = "detalle"
+               type="text"
+               name="detalle"
+               placeholder="Ingrse para que clase se solicita"
                formControlName="id"
                class="form-control">
       </div>
     </div>
 
     <div class="col col-4">
-      <button type="submit" class="btn btn-primaryCA">Crear asignatura</button>
+      <button type="submit" class="btn btn-primaryCA">Crear reserva</button>
       <button type="button" class="btn btn-dangerCA" (click)="cancelarCrearReserva()">Cancelar</button>
     </div>
   </div>
