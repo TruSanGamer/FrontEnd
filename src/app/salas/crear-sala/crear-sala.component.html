@@ -1,0 +1,28 @@
+<form [formGroup]="crearSalaForm" (ngSubmit)="crearSala(crearSalaForm.value)">
+  <div class="content-form">
+    <div class="row rowfirst">
+      <label for="nombre">Nombre de la sala</label>
+      <input id = "nombre"
+             type="text"
+             name="nombre"
+             placeholder="Escriba el nombre de la sala aquí">
+    </div>
+
+    <div class="row rowsec">
+      <div class="col col-12">
+        <label for="id">ID de la sala</label>
+        <input id = "id"
+               type="text"
+               name="id"
+               placeholder="Ingresa el código de la sala"
+               formControlName="id"
+               class="form-control">
+      </div>
+    </div>
+
+    <div class="col col-4">
+      <button type="submit" class="btn btn-primaryCA">Crear sala</button>
+      <button type="button" class="btn btn-dangerCA" (click)="cancelarCrearSala()">Cancelar</button>
+    </div>
+  </div>
+</form>
