@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Sala} from "../model/salas";
-import {SalaService} from "../service/salas.service";
+import {Sala} from "../model/sala";
+import {SalaService} from "../service/sala.service";
 import Swal from "sweetalert2";
 
 @Component({

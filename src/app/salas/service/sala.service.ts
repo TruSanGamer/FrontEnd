@@ -7,16 +7,13 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class SalaService {
-  private baseUrl: string = "https://gist.githubusercontent.com/JTINEV/22b10f2a13c64348545e23844f2654f3/raw/5197bbc48804cd40e22a2afdf2f584a334cac028/gistfile1.txt"
+  private baseUrl: string = "https://gist.githubusercontent.com/jonathanColorado/748fb008c821f91adf82ec068cd92618/raw/e150f58456ac3ca3ff194e8e5305f0732bf9fa93/gistfile1.txt"
 
   constructor(private httpClient: HttpClient) {
 
   }
 
-  /*
-  Método que obtiene las asignaturas
-  @returns Observable<Asignatura[]>
-   */
+
   getSalas(): Observable<Sala[]>{
     return this.httpClient.get<Sala[]>(this.baseUrl);
   }

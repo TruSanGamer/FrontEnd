@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CrearSalaComponent } from './crear-sala.component';
+import { CrearSalaComponent} from './crear-sala.component';
 
 describe('CrearSalaComponent', () => {
   let component: CrearSalaComponent;

@@ -10,7 +10,7 @@ describe('ListarSalasComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ListarSalasComponent]
     });
-    fixture = TestBed.createComponent(v);
+    fixture = TestBed.createComponent(ListarSalasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

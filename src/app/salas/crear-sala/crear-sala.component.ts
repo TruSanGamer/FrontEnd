@@ -11,7 +11,7 @@ import {Sala} from "../model/sala";
   templateUrl: './crear-sala.component.html',
   styleUrls: ['./crear-sala.component.css']
 })
-export class CrearAsignaturaComponent implements OnInit{
+export class CrearSalaComponent implements OnInit{
   public crearSalaForm!:  FormGroup;
   public formSala!: FormGroup;
   public formBuilder!: FormBuilder;
@@ -22,12 +22,12 @@ export class CrearAsignaturaComponent implements OnInit{
   }
 
 
-  cancelarCrearsala() {
+  cancelarCrearSala() {
     this.router.navigate(['/listar']);
   }
 
   crearSala(sala: Sala) {
-    this.asignaturaService.crearAsignatura(sala).subscribe(
+    this.salaService.crearSala(sala).subscribe(
       (sala: Sala)=> {
         console.log(sala);
         Swal.fire(
