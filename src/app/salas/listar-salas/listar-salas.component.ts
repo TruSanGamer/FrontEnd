@@ -52,7 +52,7 @@ export class ListarSalasComponent implements OnInit {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, borra el curso!"
+      confirmButtonText: "Yes, borra la Sala!"
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
