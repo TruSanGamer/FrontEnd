@@ -1,11 +1,11 @@
 .rowfirst {
-  width: 360px;
+  width: 380px;
   height: 50px;
   font-family: Montserrat;
   font-size: 14px;
   opacity: 1;
   position: absolute;
-  top: 150px;
+  top: 120px;
   left: 310px;
 }
 /*Estilos de la tabla*/

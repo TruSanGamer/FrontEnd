@@ -1,5 +1,6 @@
 export class Docente{
 
+  public id!: number;
   public cargo!: string;
   public nombre!: string;
   public apellido!: string;

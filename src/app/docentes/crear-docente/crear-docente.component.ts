@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {DocenteService} from "../service/docente.service";
 import Swal from "sweetalert2";
 import {Docente} from "../model/docente";
+
 
 @Component({
   selector: 'app-crear-docente',
@@ -12,8 +13,16 @@ import {Docente} from "../model/docente";
 })
 export class CrearDocenteComponent implements OnInit{
 
-  public crearDocenteForm!: FormGroup;
-
+  public crearDocenteForm: FormGroup= new FormGroup({
+    id: new FormControl('',[Validators.required,Validators.minLength(4)]),
+    cargo: new FormControl('',[Validators.required,Validators.minLength(4)]),
+    nombre: new FormControl('',[Validators.required,Validators.minLength(4)]),
+    apellido: new FormControl('',[Validators.required,Validators.minLength(4)]),
+    telefono: new FormControl('',[Validators.required,Validators.minLength(4)]),
+    asignatura: new FormControl('',[Validators.required,Validators.minLength(4)]),
+    correo: new FormControl('',[Validators.required,Validators.minLength(4)]),
+    facultad: new FormControl('',[Validators.required,Validators.minLength(4)])
+  });
 
   constructor(public router: Router,public formBuilder: FormBuilder, private docenteService: DocenteService) {
   }
@@ -25,20 +34,27 @@ export class CrearDocenteComponent implements OnInit{
   crearDocente(docente: Docente) {
     this.docenteService.crearDocente(docente).subscribe(
       (docente: Docente) => {
-        console.log(docente);
+        //console.log(docente);
         Swal.fire(
           'Usuario creado',
           `El docente ${docente.nombre} ha sido creado con exito`,
           'success'
         );
         this.crearDocenteForm.reset();
+        this.router.navigate(['/listar'])
       });
   }
 
   ngOnInit(): void {
     this.crearDocenteForm = this.formBuilder.group({
-      docente: ['', Validators.required, Validators.minLength(4)],
-      programa: ['', Validators.required, Validators.minLength(4)]
+      id: new FormControl('',[Validators.required,Validators.minLength(4)]),
+      cargo: new FormControl('',[Validators.required,Validators.minLength(4)]),
+      nombre: new FormControl('',[Validators.required,Validators.minLength(4)]),
+      apellido: new FormControl('',[Validators.required,Validators.minLength(4)]),
+      telefono: new FormControl('',[Validators.required,Validators.minLength(4)]),
+      asignatura: new FormControl('',[Validators.required,Validators.minLength(4)]),
+      correo: new FormControl('',[Validators.required,Validators.minLength(4)]),
+      facultad: new FormControl('',[Validators.required,Validators.minLength(4)])
     });
   }
 

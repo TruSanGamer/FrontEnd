@@ -6,6 +6,7 @@ import {FooterComponent} from "./footer/footer.component";
 import {AppComponent} from "./app.component";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {SweetAlert2Module} from "@sweetalert2/ngx-sweetalert2";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 const rutas:Routes=[
@@ -24,7 +25,8 @@ const rutas:Routes=[
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(rutas),
-    SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

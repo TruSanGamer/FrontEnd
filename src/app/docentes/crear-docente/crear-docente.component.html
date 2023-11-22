@@ -1,6 +1,15 @@
 <form [formGroup]="crearDocenteForm" (ngSubmit)="crearDocente(crearDocenteForm.value)">
   <div class="row rowfirst">
     <div class="col col-70">
+      <label for="id">Id</label>
+      <input id="id"
+             type="number"
+             name="id"
+             placeholder="Ingrese su id "
+             formControlName="id"
+             class="form-control"
+
+      >
       <label for="cargo">Cargo</label>
       <input id="cargo"
              type="text"
