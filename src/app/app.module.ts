@@ -14,6 +14,7 @@ const rutas:Routes=[
   {path: 'header', component: HeaderComponent},
   {path: 'footer', component: FooterComponent},
   {path: '', loadChildren: () => import('./docentes/docentes.module').then(m => m.DocentesModule)},
+  {path: '', loadChildren: () => import('./coordinadores/coordinadores.module').then(m => m.CoordinadoresModule)},
 ]
 @NgModule({
   declarations: [
