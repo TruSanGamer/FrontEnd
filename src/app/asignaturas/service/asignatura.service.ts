@@ -1,27 +1,50 @@
 import { Injectable } from '@angular/core';
 import {Asignatura} from "../model/asignatura";
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AsignaturaService {
-  private baseUrl: string = "https://gist.githubusercontent.com/JTINEV/22b10f2a13c64348545e23844f2654f3/raw/5197bbc48804cd40e22a2afdf2f584a334cac028/gistfile1.txt"
+  private baseUrl: string = "http://localhost:8080"
 
   constructor(private httpClient: HttpClient) {
 
   }
 
-  /*
-  Método que obtiene las asignaturas
-  @returns Observable<Asignatura[]>
+  /**
+   * Metodo que obtiene los cursos
+   * @returns Observable<Asignatura[]> Lista de cursos
    */
-  getAsignaturas(): Observable<Asignatura[]>{
-    return this.httpClient.get<Asignatura[]>(this.baseUrl);
+  getAsignaturas(): Observable<Asignatura[]> {
+    return this.httpClient.get<Asignatura[]>(this.baseUrl+"/asignaturaes")
+      .pipe(
+        map((result:any)=>{
+          console.log(result._embedded.cursoes);
+          return result._embedded.cursoes;
+        }));
+  }
+  getAsignatura(idAsignatura: number): Observable<Asignatura> {
+    return this.httpClient.get<Asignatura>(this.baseUrl + '/asignaturaes/' + idAsignatura);
   }
 
+
+  /**
+   * Metodo que crea un curso
+   * @param asignatura Curso a crear
+   */
+
+
   crearAsignatura(asignatura: Asignatura): Observable<Asignatura> {
-    return this.httpClient.post<Asignatura>(this.baseUrl, asignatura);
+    return this.httpClient.post<Asignatura>(this.baseUrl+"/asignaturaes", asignatura);
   }
+  editarAsignatura(asignatura: Asignatura): Observable<Asignatura> {
+    return this.httpClient.put<Asignatura>(this.baseUrl+"/asignaturaes/"+asignatura.id, asignatura);
+  }
+
+  borrarAsignatura(idAsignatura: number): Observable<any> {
+    return this.httpClient.delete(this.baseUrl + "/asignaturaes/" + idAsignatura);
+  }
+
 }

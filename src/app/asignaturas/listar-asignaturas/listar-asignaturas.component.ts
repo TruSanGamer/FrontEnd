@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Asignatura} from "../model/asignatura";
 import {AsignaturaService} from "../service/asignatura.service";
 import Swal from "sweetalert2";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-listar-asignaturas',
@@ -14,56 +15,63 @@ export class ListarAsignaturasComponent implements OnInit {
   public asignaturaSelected!: Asignatura;
   public selected: boolean = false;
 
-  constructor(private asignaturaService: AsignaturaService) {
-    this.asignaturaService.getAsignaturas().subscribe((asignaturas: Array<Asignatura>) => {
+  constructor(private asignaturaService: AsignaturaService, private routerPath: Router, private router: ActivatedRoute) {
+    this.asignaturaService.getAsignaturas().subscribe(
+      (asignaturas: Array<Asignatura>) => {
         this.asignaturas = asignaturas;
       }
     );
   }
 
+  /**
+   * Metodo que se ejecuta al iniciar el componente
+   */
+
+
   ngOnInit(): void {
   }
 
+  /**
+   * Evento que se dispara al seleccionar un curso en la lista
+   * @param asignatura Curso seleccionado
+   */
+
   onSelected(asignatura: Asignatura) {
     this.asignaturaSelected = asignatura;
-    this.selected = true
+    this.selected=true;
+    // console.log(this.cursoSelected); //Imprime en la consola del navegador el curso seleccionado
+    this.routerPath.navigate(['/editar/' + this.asignaturaSelected.id]); //Redirecciona a la ruta /editar/:id
+  }
 
-    Swal.fire('Detalle de la asignatura', '<table class="table">\n' +
-      '  <thead>\n' +
-      '  <tr>\n' +
-      '    <th scope="col">Nombre</th>\n' +
-      '    <th scope="col">ID de la asignatura</th>\n' +
-      '  </tr>\n' +
-      '  </thead>\n' +
-      '  <tbody>\n' +
-      '    <tr>\n' +
-      '      <td>' + this.asignaturaSelected.nombre + '</td>\n' +
-      '      <td>' + this.asignaturaSelected.id + '</td>\n' +
-      '    </tr>\n' +
-      '  </tbody>\n' +
-      '</table>', 'success');
-}
+  /**
+   * Metodo que elimina un curso seleccionado de la lista
+   * @param asignatura Curso a eliminar
+   */
+
   borrarAsignatura(asignatura: Asignatura) {
-
     Swal.fire({
-      title: "Estas seguro?",
-      text: "Usted no puede revertir eso!",
+      title: "Está seguro?",
+      text: "Usted no puede revertir esto!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, borra el curso!"
+      confirmButtonText: "Si, borra la asignatura!"
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: "Eliminado!",
-          text: "El curso ha sido eliminado.",
-          icon: "success"
+        this.asignaturaService.borrarAsignatura(asignatura.id).subscribe(() => { // Llama al servicio para eliminar el curso
+          Swal.fire({
+            title: "Eliminado!",
+            text: "La asignatura ha sido eliminada.",
+            icon: "success"
+          });
+          this.asignaturas = this.asignaturas.filter((c) => c !== asignatura); // Actualiza la lista de cursos en la vista
         });
       }
     });
-    //this.routerPath.navigate(['/curso/detalle', curso.id]); Estrategia redireccionando la ruta
   }
-
-  protected readonly Asignatura = Asignatura;
+  crearAsignatura() {
+    this.routerPath.navigate(['/crear']);
+  }
 }
+
