@@ -26,4 +26,8 @@ export class ProgramasService {
   crearProgramas(programas: Programas): Observable<Programas> {
     return this.httpClient.post<Programas>(this.baseUrl, programas);
   }
+
+  borrarPrograma(idPrograma: number): Observable<any> {
+    return this.httpClient.delete(this.baseUrl + "/" + idPrograma)
+  }
 }
