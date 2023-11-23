@@ -44,7 +44,6 @@ export class ListarProgramasComponent implements OnInit {
       '</table>', 'success');
   }
   borrarProgramas(programas: Programas) {
-
     Swal.fire({
       title: "Estas seguro?",
       text: "Usted no puede revertir eso!",
@@ -52,17 +51,19 @@ export class ListarProgramasComponent implements OnInit {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, borra el curso!"
+      confirmButtonText: "Si, borra el programa!"
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: "Eliminado!",
-          text: "El curso ha sido eliminado.",
-          icon: "success"
+        this.programasService.borrarPrograma(programas.id).subscribe(() => {
+          Swal.fire({
+            title: "Eliminado!",
+            text: "El curso ha sido eliminado.",
+            icon: "success"
+          });
+          this.programas = this.programas.filter((c) => c !== programas); // Actualiza la lista de progrmas en la vista
         });
       }
     });
-    //this.routerPath.navigate(['/curso/detalle', curso.id]); Estrategia redireccionando la ruta
   }
 
   protected readonly Programas = Programas;
