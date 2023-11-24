@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Programas} from "../model/programas";
+import {Programa} from "../model/programa";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProgramasService {
-  private baseUrl: string = "http://3.145.90.209:8081/api/programa-service/programas"
+  private baseUrl: string = "http://3.145.90.209:8081/api/programa-service"
 
 
 
@@ -19,15 +19,15 @@ export class ProgramasService {
   Método que obtiene los programas
   @returns Observable<Programas[]>
    */
-  getProgramas(): Observable<Programas[]>{
-    return this.httpClient.get<Programas[]>(this.baseUrl);
+  getProgramas(): Observable<Programa[]>{
+    return this.httpClient.get<Programa[]>(this.baseUrl+"/programa");
   }
 
-  crearProgramas(programas: Programas): Observable<Programas> {
-    return this.httpClient.post<Programas>(this.baseUrl, programas);
+  crearProgramas(programas: Programa): Observable<Programa> {
+    return this.httpClient.post<Programa>(this.baseUrl+"/programa", programas);
   }
 
   borrarPrograma(idPrograma: number): Observable<any> {
-    return this.httpClient.delete(this.baseUrl + "/" + idPrograma)
+    return this.httpClient.delete(this.baseUrl + "/programa/" + idPrograma)
   }
 }

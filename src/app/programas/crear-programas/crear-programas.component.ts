@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ProgramasService} from "../service/programas.service";
 import {Router} from "@angular/router";
 import Swal from "sweetalert2";
-import {Programas} from "../model/programas";
+import {Programa} from "../model/programa";
 
 
 @Component({
@@ -12,7 +12,7 @@ import {Programas} from "../model/programas";
   styleUrls: ['./crear-programas.component.css']
 })
 export class CrearProgramasComponent implements OnInit{
-  public crearProgramasForm!:  FormGroup;
+  public crearProgramasForm:  FormGroup = new FormGroup({id:new FormControl(""), programa: new FormControl("")});
   public formProgramas!: FormGroup;
   public formBuilder!: FormBuilder;
 
@@ -26,13 +26,13 @@ export class CrearProgramasComponent implements OnInit{
     this.router.navigate(['/listar']);
   }
 
-  crearProgramas(programas: Programas) {
-    this.programasService.crearProgramas(programas).subscribe(
-      (programas: Programas)=> {
-        console.log(programas);
+  crearProgramas(programa: Programa) {
+    this.programasService.crearProgramas(programa).subscribe(
+      (programa: Programa)=> {
+        console.log(programa);
         Swal.fire(
           'Programa creado',
-          `El programa ${programas.programa} ha sido creado con éxito`,
+          `El programa ${programa.programa} ha sido creado con éxito`,
           'success'
         );
         this.crearProgramasForm.reset();
@@ -41,8 +41,7 @@ export class CrearProgramasComponent implements OnInit{
 
   ngOnInit() {
     this.formProgramas = this.formBuilder.group({
-      programas: ['', Validators.required, Validators.minLength(4)],
-      id: ['', Validators.required, Validators.minLength(4)]
+      programa: ['', Validators.required, Validators.minLength(4)]
     });
   }
 }

@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Programas} from "../model/programas";
+import {Programa} from "../model/programa";
 
 @Component({
   selector: 'app-detalle-programas',
@@ -7,5 +7,5 @@ import {Programas} from "../model/programas";
   styleUrls: ['./detalle-programas.component.css']
 })
 export class DetalleProgramasComponent {
-  @Input() programas!: Programas;
+  @Input() programas!: Programa;
 }

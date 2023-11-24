@@ -1,7 +1,7 @@
 /**
  *Modelo de datos para los programas
  */
-export class Programas{
+export class Programa {
   public id!: number;
   public programa!: string;
 }

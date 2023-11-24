@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ProgramasService} from "../service/programas.service";
 import Swal from "sweetalert2";
-import {Programas} from "../model/programas";
+import {Programa} from "../model/programa";
 
 @Component({
   selector: 'app-listar-programas',
@@ -9,13 +9,13 @@ import {Programas} from "../model/programas";
   styleUrls: ['./listar-programas.component.css']
 })
 export class ListarProgramasComponent implements OnInit {
-  public programas: Array<Programas> = [];
+  public programas: Array<Programa> = [];
   public nombreProgramas!: string;
-  public programasSelected!: Programas;
+  public programasSelected!: Programa;
   public selected: boolean = false;
 
   constructor(private programasService: ProgramasService) {
-    this.programasService.getProgramas().subscribe((programas: Array<Programas>) => {
+    this.programasService.getProgramas().subscribe((programas: Array<Programa>) => {
         this.programas = programas;
       }
     );
@@ -24,7 +24,7 @@ export class ListarProgramasComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSelected(programas: Programas) {
+  onSelected(programas: Programa) {
     this.programasSelected = programas;
     this.selected = true
 
@@ -43,7 +43,7 @@ export class ListarProgramasComponent implements OnInit {
       '  </tbody>\n' +
       '</table>', 'success');
   }
-  borrarProgramas(programas: Programas) {
+  borrarProgramas(programas: Programa) {
     Swal.fire({
       title: "Estas seguro?",
       text: "Usted no puede revertir eso!",
@@ -66,5 +66,5 @@ export class ListarProgramasComponent implements OnInit {
     });
   }
 
-  protected readonly Programas = Programas;
+  protected readonly Programas = Programa;
 }
