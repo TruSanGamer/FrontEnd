@@ -32,7 +32,7 @@ export class CrearProgramasComponent implements OnInit{
         console.log(programas);
         Swal.fire(
           'Programa creado',
-          `El programa ${programas.nombre} ha sido creado con éxito`,
+          `El programa ${programas.programa} ha sido creado con éxito`,
           'success'
         );
         this.crearProgramasForm.reset();

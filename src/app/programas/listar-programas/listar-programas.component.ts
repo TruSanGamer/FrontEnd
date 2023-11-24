@@ -37,7 +37,7 @@ export class ListarProgramasComponent implements OnInit {
       '  </thead>\n' +
       '  <tbody>\n' +
       '    <tr>\n' +
-      '      <td>' + this.programasSelected.nombre + '</td>\n' +
+      '      <td>' + this.programasSelected.programa + '</td>\n' +
       '      <td>' + this.programasSelected.id + '</td>\n' +
       '    </tr>\n' +
       '  </tbody>\n' +

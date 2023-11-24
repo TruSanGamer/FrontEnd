@@ -3,6 +3,5 @@
  */
 export class Programas{
   public id!: number;
-  public nombre!: string;
-
+  public programa!: string;
 }
