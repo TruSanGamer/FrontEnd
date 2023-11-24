@@ -4,7 +4,9 @@ import { ReservaRoutingModule } from './reserva-routing.module';
 import {ListarReservaComponent} from "./listar-reserva/listar-reserva.component";
 import {CrearReservaComponent} from "./crear-reserva/crear-reserva.component";
 import {DetalleReservaComponent} from "./detalle-reserva/detalle-reserva.component";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {ReactiveFormsModule} from "@angular/forms";
+import { EditarReservaComponent } from './editar-reserva/editar-reserva.component';
+
 
 
 @NgModule({
@@ -12,6 +14,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     ListarReservaComponent,
     CrearReservaComponent,
     DetalleReservaComponent,
+    EditarReservaComponent,
+
   ],
   exports: [
     ListarReservaComponent
@@ -19,7 +23,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
   imports: [
     CommonModule,
     ReservaRoutingModule,
-    FormsModule,
     ReactiveFormsModule
   ]
 })

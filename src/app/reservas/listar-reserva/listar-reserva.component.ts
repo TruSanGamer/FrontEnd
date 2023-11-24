@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Reserva} from "../model/reserva";
 import {ReservaService} from  "../service/reserva.service"
 import Swal from "sweetalert2";
+import {ActivatedRoute, Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-listar-reserva',
@@ -14,8 +16,9 @@ export class ListarReservaComponent implements OnInit {
   public reservaSelected!: Reserva;
   public selected: boolean = false;
 
-  constructor(private reservaService: ReservaService) {
-    this.reservaService.getReservas().subscribe((reservas: Array<Reserva>) => {
+  constructor(private reservaService: ReservaService, private routerPath: Router, private router: ActivatedRoute) {
+    this.reservaService.getReservas().subscribe(
+      (reservas: Array<Reserva>) => {
         this.reservas = reservas;
       }
     );
@@ -26,48 +29,37 @@ export class ListarReservaComponent implements OnInit {
 
   onSelected(reserva: Reserva) {
     this.reservaSelected = reserva;
-    this.selected = true
-
-    Swal.fire('Detalle de la reserva', '<table class="table">\n' +
-      '  <thead>\n' +
-      '  <tr>\n' +
-      '    <th scope="col">Sala</th>\n' +
-      '    <th scope="col">Fecha de Inicio</th>\n' +
-      '    <th scope="col">Fecha de Finalizacion</th>\n' +
-      '    <th scope="col">Detalles</th>\n' +
-      '  </tr>\n' +
-      '  </thead>\n' +
-      '  <tbody>\n' +
-      '    <tr>\n' +
-      '      <td>' + this.reservaSelected.sala + '</td>\n' +
-      '      <td>' + this.reservaSelected.fehaInicio + '</td>\n' +
-      '      <td>' + this.reservaSelected.fechaFinalizacion + '</td>\n' +
-      '      <td>' + this.reservaSelected.detalle + '</td>\n' +
-      '    </tr>\n' +
-      '  </tbody>\n' +
-      '</table>', 'success');
+    this.selected=true;
+    // console.log(this.cursoSelected); //Imprime en la consola del navegador el curso seleccionado
+    this.routerPath.navigate(['/editar/' + this.reservaSelected.sala]); //Redirecciona a la ruta /editar/:id
   }
+
+
   borrarReserva(reserva: Reserva) {
 
     Swal.fire({
-      title: "Estas seguro?",
-      text: "Usted no puede revertir eso!",
+      title: "Está seguro?",
+      text: "Usted no puede revertir esto!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, borra la reserva!"
+      confirmButtonText: "Si, borra la reserva!"
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: "Eliminado!",
-          text: "La Reserva ha sido elimanda.",
-          icon: "success"
+        this.reservaService.borrarReserva(reserva.fechaInicio).subscribe(() => { // Llama al servicio para eliminar el curso
+          Swal.fire({
+            title: "Eliminado!",
+            text: "La reserva ha sido eliminada.",
+            icon: "success"
+          });
+          this.reservas = this.reservas.filter((c) => c !== reserva); // Actualiza la lista de cursos en la vista
         });
       }
     });
-    //this.routerPath.navigate(['/curso/detalle', curso.id]); Estrategia redireccionando la ruta
+    //this.routerPath.navigate(['/curso/detalle', curso.id]);x Estrategia redireccionando la ruta
   }
-
-  protected readonly Reserva = Reserva;
+  crearReserva() {
+    this.routerPath.navigate(['/crear']);
+  }
 }

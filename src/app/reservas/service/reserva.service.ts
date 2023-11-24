@@ -1,27 +1,48 @@
 import { Injectable } from '@angular/core';
 import {Reserva} from "../model/reserva";
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReservaService {
-  private baseUrl: string = "https://gist.githubusercontent.com/jonathanColorado/42875592add75854ae14c20948bd6a08/raw/3b2d0a837c772d93a580c0561b2d7056eb0fe3b2/gistfile1.txt"
+  private baseUrl: string = "http://localhost:8080"
 
-    constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient) {
 
   }
 
   /*
-  Método que obtiene las asignaturas
-  @returns Observable<Asignatura[]>
+  Método que obtiene las reservas
+  @returns Observable<reservas[]>
    */
-  getReservas(): Observable<Reserva[]>{
-    return this.httpClient.get<Reserva[]>(this.baseUrl);
+  getReservas(): Observable<Reserva[]> {
+    return this.httpClient.get<Reserva[]>(this.baseUrl + "/Reserva")
+      .pipe(
+        map((result: any) => {
+          console.log(result._embedded.cursoes);
+          return result._embedded.cursoes;
+        }));
+  }
+  getReserva(salaReserva: number): Observable<Reserva> {
+    return this.httpClient.get<Reserva>(this.baseUrl + '/reservas/' + salaReserva);
   }
 
+
+  /**
+   * Metodo que crea un curso
+   * @param asignatura Curso a crear
+   */
+
   crearReserva(reserva: Reserva): Observable<Reserva> {
-    return this.httpClient.post<Reserva>(this.baseUrl, reserva);
+    return this.httpClient.post<Reserva>(this.baseUrl+"/reservas", reserva);
+  }
+  editarReserva(reserva: Reserva): Observable<Reserva> {
+    return this.httpClient.put<Reserva>(this.baseUrl+"/reservas/"+reserva.sala, reserva);
+  }
+
+  borrarReserva(salaReserva: number): Observable<any> {
+    return this.httpClient.delete(this.baseUrl + "/asignaturaes/" + salaReserva);
   }
 }

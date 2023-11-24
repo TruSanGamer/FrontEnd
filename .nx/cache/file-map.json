@@ -1,0 +1,370 @@
+{
+  "version": "6.0",
+  "nxVersion": "17.1.2",
+  "deps": {
+    "@angular/animations": "^16.2.0",
+    "@angular/common": "^16.2.0",
+    "@angular/compiler": "^16.2.0",
+    "@angular/core": "^16.2.0",
+    "@angular/forms": "^16.2.0",
+    "@angular/platform-browser": "^16.2.0",
+    "@angular/platform-browser-dynamic": "^16.2.0",
+    "@angular/router": "^16.2.0",
+    "@nrwl/angular": "^17.1.2",
+    "@popperjs/core": "^2.11.8",
+    "@sweetalert2/ngx-sweetalert2": "^12.2.0",
+    "bootstrap": "~5.3.2",
+    "jquery": "^3.7.1",
+    "rxjs": "~7.8.0",
+    "sweetalert2": "^11.6.13",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.13.0",
+    "@angular-devkit/build-angular": "^16.2.7",
+    "@angular/cli": "^16.2.7",
+    "@angular/compiler-cli": "^16.2.0",
+    "@types/jasmine": "~4.3.0",
+    "jasmine-core": "~4.6.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.1.3"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {
+      "FrontEnd": [
+        {
+          "file": ".editorconfig",
+          "hash": "17241496168097493888"
+        },
+        {
+          "file": ".gitignore",
+          "hash": "4689145951703824387"
+        },
+        {
+          "file": ".nx/cache/file-map.json",
+          "hash": "17106549004349873350"
+        },
+        {
+          "file": ".nx/cache/lockfile.hash",
+          "hash": "2463868946301598065"
+        },
+        {
+          "file": ".nx/cache/parsed-lock-file.json",
+          "hash": "16928651080360743763"
+        },
+        {
+          "file": ".nx/cache/project-graph.json",
+          "hash": "3673234565142033746"
+        },
+        {
+          "file": ".vscode/extensions.json",
+          "hash": "11934160580685414355"
+        },
+        {
+          "file": ".vscode/launch.json",
+          "hash": "17406702432687230417"
+        },
+        {
+          "file": ".vscode/tasks.json",
+          "hash": "10093397977228577162"
+        },
+        {
+          "file": "README.md",
+          "hash": "16007542248948483168"
+        },
+        {
+          "file": "angular.json",
+          "hash": "15577948354694384168"
+        },
+        {
+          "file": "package-lock.json",
+          "hash": "12933485610395691384"
+        },
+        {
+          "file": "package.json",
+          "hash": "14552806017206371352",
+          "deps": [
+            "npm:@angular/animations",
+            "npm:@angular/common",
+            "npm:@angular/compiler",
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "npm:@angular/platform-browser",
+            "npm:@angular/platform-browser-dynamic",
+            "npm:@angular/router",
+            "npm:@nrwl/angular",
+            "npm:@popperjs/core",
+            "npm:@sweetalert2/ngx-sweetalert2",
+            "npm:bootstrap",
+            "npm:jquery",
+            "npm:rxjs",
+            "npm:sweetalert2",
+            "npm:tslib",
+            "npm:zone.js",
+            "npm:@angular-devkit/build-angular",
+            "npm:@angular/cli",
+            "npm:@angular/compiler-cli",
+            "npm:@types/jasmine",
+            "npm:jasmine-core",
+            "npm:karma",
+            "npm:karma-chrome-launcher",
+            "npm:karma-coverage",
+            "npm:karma-jasmine",
+            "npm:karma-jasmine-html-reporter",
+            "npm:typescript"
+          ]
+        },
+        {
+          "file": "src/app/app.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "src/app/app.component.html",
+          "hash": "4720834426923699573"
+        },
+        {
+          "file": "src/app/app.component.spec.ts",
+          "hash": "17532237564177305680",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/app.component.ts",
+          "hash": "13674549104385947220",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/app.module.ts",
+          "hash": "13418604727337375473",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/platform-browser",
+            "npm:@angular/router",
+            "npm:@angular/common",
+            "npm:@sweetalert2/ngx-sweetalert2"
+          ]
+        },
+        {
+          "file": "src/app/footer/footer.component.css",
+          "hash": "1003948133586968652"
+        },
+        {
+          "file": "src/app/footer/footer.component.html",
+          "hash": "9992938886575208654"
+        },
+        {
+          "file": "src/app/footer/footer.component.spec.ts",
+          "hash": "16734526448690729380",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/footer/footer.component.ts",
+          "hash": "9539866631233923883",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/header/header.component.css",
+          "hash": "646657066137598510"
+        },
+        {
+          "file": "src/app/header/header.component.html",
+          "hash": "6679556882216951111"
+        },
+        {
+          "file": "src/app/header/header.component.spec.ts",
+          "hash": "14465742688965997085",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/header/header.component.ts",
+          "hash": "13593037929272246018",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/reservas/crear-reserva/crear-reserva.component.css",
+          "hash": "7464945258376769887"
+        },
+        {
+          "file": "src/app/reservas/crear-reserva/crear-reserva.component.html",
+          "hash": "12036955324533572435"
+        },
+        {
+          "file": "src/app/reservas/crear-reserva/crear-reserva.component.spec.ts",
+          "hash": "6693185797358005867",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/reservas/crear-reserva/crear-reserva.component.ts",
+          "hash": "10859955771379024657",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "npm:@angular/router",
+            "npm:sweetalert2"
+          ]
+        },
+        {
+          "file": "src/app/reservas/detalle-reserva/detalle-reserva.component.css",
+          "hash": "8643381682514263301"
+        },
+        {
+          "file": "src/app/reservas/detalle-reserva/detalle-reserva.component.html",
+          "hash": "3632027643155623340"
+        },
+        {
+          "file": "src/app/reservas/detalle-reserva/detalle-reserva.component.spec.ts",
+          "hash": "11543407285253709100",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/reservas/detalle-reserva/detalle-reserva.component.ts",
+          "hash": "5078735801554112771",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/reservas/editar-reserva/editar-reserva.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "src/app/reservas/editar-reserva/editar-reserva.component.html",
+          "hash": "15899065523603922332"
+        },
+        {
+          "file": "src/app/reservas/editar-reserva/editar-reserva.component.spec.ts",
+          "hash": "9175280348814228411",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/reservas/editar-reserva/editar-reserva.component.ts",
+          "hash": "5786927632814544536",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "npm:@angular/router",
+            "npm:sweetalert2"
+          ]
+        },
+        {
+          "file": "src/app/reservas/listar-reserva/listar-reserva.component.css",
+          "hash": "12894325168146567527"
+        },
+        {
+          "file": "src/app/reservas/listar-reserva/listar-reserva.component.html",
+          "hash": "17648294098862531779"
+        },
+        {
+          "file": "src/app/reservas/listar-reserva/listar-reserva.component.spec.ts",
+          "hash": "16600822308997242151",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/reservas/listar-reserva/listar-reserva.component.ts",
+          "hash": "15688785691578527477",
+          "deps": [
+            "npm:@angular/core",
+            "npm:sweetalert2",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "src/app/reservas/model/reserva.ts",
+          "hash": "17595905769530204981"
+        },
+        {
+          "file": "src/app/reservas/reserva-routing.module.ts",
+          "hash": "8654394994240761260",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "src/app/reservas/reserva.module.ts",
+          "hash": "9064509078704040728",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@angular/forms"
+          ]
+        },
+        {
+          "file": "src/app/reservas/service/reserva.service.spec.ts",
+          "hash": "1173612793533475579",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/reservas/service/reserva.service.ts",
+          "hash": "12277135012702735580",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "src/favicon.ico",
+          "hash": "3988961587069885523"
+        },
+        {
+          "file": "src/index.html",
+          "hash": "7071023234128838595"
+        },
+        {
+          "file": "src/main.ts",
+          "hash": "14952978764792272270",
+          "deps": [
+            "npm:@angular/platform-browser-dynamic"
+          ]
+        },
+        {
+          "file": "src/styles.css",
+          "hash": "2917954890128038984"
+        },
+        {
+          "file": "tsconfig.app.json",
+          "hash": "4215804490484784415"
+        },
+        {
+          "file": "tsconfig.json",
+          "hash": "5537191522373868648"
+        },
+        {
+          "file": "tsconfig.spec.json",
+          "hash": "5122839733245053999"
+        }
+      ]
+    },
+    "nonProjectFiles": []
+  }
+}
