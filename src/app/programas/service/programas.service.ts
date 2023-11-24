@@ -7,7 +7,7 @@ import {Programa} from "../model/programa";
   providedIn: 'root'
 })
 export class ProgramasService {
-  private baseUrl: string = "http://3.145.90.209:8081/api/programa-service"
+  private baseUrl: string = "http://3.147.108.229/api/programa-service"
 
 
 
