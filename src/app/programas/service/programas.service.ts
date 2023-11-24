@@ -9,6 +9,8 @@ import {Programas} from "../model/programas";
 export class ProgramasService {
   private baseUrl: string = "http://3.145.90.209:8081/api/programa-service/programas"
 
+
+
   constructor(private httpClient: HttpClient) {
 
   }
@@ -23,5 +25,9 @@ export class ProgramasService {
 
   crearProgramas(programas: Programas): Observable<Programas> {
     return this.httpClient.post<Programas>(this.baseUrl, programas);
+  }
+
+  borrarPrograma(idPrograma: number): Observable<any> {
+    return this.httpClient.delete(this.baseUrl + "/" + idPrograma)
   }
 }
