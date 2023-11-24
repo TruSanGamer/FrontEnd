@@ -27,9 +27,10 @@
         <td>
           <button class="btn btn-primary btn-sm" (click)="editarProgramas(programas)">Editar</button>
         </td>
-        <td (click)="borrarProgramas(programas)"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-        </svg>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="borrarProgramas(programas)">Eliminar</button>
         </td>
+
       </tr>
     </ng-container>
     </tbody>
