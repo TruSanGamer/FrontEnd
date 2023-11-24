@@ -66,5 +66,25 @@ export class ListarProgramasComponent implements OnInit {
     });
   }
 
+  editarProgramas(programas: Programa) {
+    Swal.fire({
+      title: 'Editar programa',
+      html:
+        '<p>ID del programa: <strong>' + programas.id + '</strong></p>' +
+        '<input id="nombre" class="swal2-input" placeholder="Nombre" value="' + programas.programa + '">',
+      focusConfirm: false,
+      preConfirm: () => {
+        const nombre = (document.getElementById('nombre') as HTMLInputElement).value;
+
+        const programaActualizado: Programa = { id: programas.id, programa: nombre };
+
+        this.programasService.editarPrograma(programas.id, programaActualizado).subscribe(() => {
+          Swal.fire('Editado!', 'El programa ha sido editado correctamente.', 'success');
+          // Actualiza la lista de programas en la vista o realiza alguna acción adicional
+        });
+      }
+    });
+  }
+
   protected readonly Programas = Programa;
 }

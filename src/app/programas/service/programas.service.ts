@@ -30,4 +30,8 @@ export class ProgramasService {
   borrarPrograma(idPrograma: number): Observable<any> {
     return this.httpClient.delete(this.baseUrl + "/programa/" + idPrograma)
   }
+
+  editarPrograma(idPrograma: number, programa: Programa): Observable<Programa> {
+    return this.httpClient.put<Programa>(`${this.baseUrl}/programa/${idPrograma}`, programa);
+  }
 }
