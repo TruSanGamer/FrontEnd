@@ -46,7 +46,7 @@
         },
         {
           "file": ".nx/cache/file-map.json",
-          "hash": "17106549004349873350"
+          "hash": "14209015927515045560"
         },
         {
           "file": ".nx/cache/lockfile.hash",
@@ -197,11 +197,11 @@
         },
         {
           "file": "src/app/reservas/crear-reserva/crear-reserva.component.css",
-          "hash": "7464945258376769887"
+          "hash": "5254151740013489086"
         },
         {
           "file": "src/app/reservas/crear-reserva/crear-reserva.component.html",
-          "hash": "12036955324533572435"
+          "hash": "5375338945392851614"
         },
         {
           "file": "src/app/reservas/crear-reserva/crear-reserva.component.spec.ts",
@@ -273,7 +273,7 @@
         },
         {
           "file": "src/app/reservas/listar-reserva/listar-reserva.component.html",
-          "hash": "17648294098862531779"
+          "hash": "16398386170172277073"
         },
         {
           "file": "src/app/reservas/listar-reserva/listar-reserva.component.spec.ts",
@@ -305,7 +305,7 @@
         },
         {
           "file": "src/app/reservas/reserva.module.ts",
-          "hash": "9064509078704040728",
+          "hash": "5953696669244345301",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/common",
