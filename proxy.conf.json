@@ -1,0 +1,10 @@
+{
+  "/programa-reservas/*": {
+    "target": "localhost:8081",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {"^/programa-reservas" : "localhost:8081"}
+
+  }
+}

@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {ListarReservaComponent} from "./listar-reserva/listar-reserva.component";
 import {CrearReservaComponent} from "./crear-reserva/crear-reserva.component";
 import {DetalleReservaComponent} from "./detalle-reserva/detalle-reserva.component";
-import {EditarReservaComponent} from "./editar-reserva/editar-reserva.component";
+//import {EditarReservaComponent} from "./editar-reserva/editar-reserva.component";
 
 const routes: Routes = [
   {
@@ -22,10 +22,10 @@ const routes: Routes = [
     path: 'detalle/:id',
     component: DetalleReservaComponent
   },
-  {
-    path: 'editar/:id',
-    component: EditarReservaComponent
-  }
+ // {
+    //path: 'editar/:id',
+   // component: EditarReservaComponent
+  //}
 ];
 
 

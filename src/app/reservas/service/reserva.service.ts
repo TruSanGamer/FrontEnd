@@ -7,7 +7,7 @@ import {map, Observable} from "rxjs";
   providedIn: 'root'
 })
 export class ReservaService {
-  private baseUrl: string = "http://localhost:8080"
+  private baseUrl: string = "localhost:8081/programa-reservas"
 
   constructor(private httpClient: HttpClient) {
 
@@ -18,31 +18,18 @@ export class ReservaService {
   @returns Observable<reservas[]>
    */
   getReservas(): Observable<Reserva[]> {
-    return this.httpClient.get<Reserva[]>(this.baseUrl + "/Reserva")
-      .pipe(
-        map((result: any) => {
-          console.log(result._embedded.cursoes);
-          return result._embedded.cursoes;
-        }));
-  }
-  getReserva(salaReserva: number): Observable<Reserva> {
-    return this.httpClient.get<Reserva>(this.baseUrl + '/reservas/' + salaReserva);
-  }
+    return this.httpClient.get<Reserva[]>(this.baseUrl + "/reserva")
 
-
-  /**
-   * Metodo que crea un curso
-   * @param asignatura Curso a crear
-   */
+  }
 
   crearReserva(reserva: Reserva): Observable<Reserva> {
-    return this.httpClient.post<Reserva>(this.baseUrl+"/reservas", reserva);
+    return this.httpClient.post<Reserva>(this.baseUrl+"/reserva", reserva);
   }
-  editarReserva(reserva: Reserva): Observable<Reserva> {
-    return this.httpClient.put<Reserva>(this.baseUrl+"/reservas/"+reserva.sala, reserva);
+  editarReserva(idReserva: number, reserva:Reserva): Observable<Reserva> {
+    return this.httpClient.put<Reserva>(this.baseUrl+`/reserva/${idReserva}`,reserva);
   }
 
-  borrarReserva(salaReserva: number): Observable<any> {
-    return this.httpClient.delete(this.baseUrl + "/asignaturaes/" + salaReserva);
+  borrarReserva(idReserva: number): Observable<any> {
+    return this.httpClient.delete(this.baseUrl + "/reserva/" + idReserva);
   }
 }

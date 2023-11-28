@@ -1,45 +1,45 @@
 <form [formGroup]="crearReservaForm" (ngSubmit)="crearReserva(crearReservaForm.value)">
+  <div class="content-form">
   <div class="rowfirst">
     <table class="table">
       <thead>
     <div class="col">
 
 
-      <label for="fechaInicio">Sala</label>
+      <label for="nombresolicitante">Nombre Solicitante</label>
+      <input id = "nombresolicitante"
+             type="text"
+             name="nombresolicitante"
+             placeholder="Escriba el nombre del solicitante aqui"
+             formControlName="nombresolicitante"
+             class="form-control">
+
+      <label for="fecha">Fecha</label>
+      <input id = "fecha"
+             type="text"
+             name="fecha"
+             placeholder="Escriba la fecha aquí"
+             formControlName="fecha"
+             class="form-control">
+
+      <label for="sala">Sala</label>
       <input id = "sala"
              type="text"
              name="sala"
-             placeholder="Escriba el nombre de la sal aqui"
-             formControlName="nombre"
+             placeholder="Escriba la sala aqui"
+             formControlName="sala"
              class="form-control">
- <div class="col col-12">
-        <label for="fechaInicio">Fecha de inicio</label>
-        <input id = "fechaInicio"
-               type="text"
-               name="fechaInicio"
-               placeholder="Ingresa la Fecha de inicio "
-               formControlName="id"
-               class="form-control">
-     <div class="col col-10">
-          <label for="fechaFinalizacion">Fecha de Finaizacion</label>
-          <input id = "fechaFinalizacion"
-                 type="text"
-                 name="fechaFinalizacion"
-                 placeholder="Ingresa la Fecha de Finalizacion"
-                 formControlName="id"
-                 class="form-control">
-   <div class="col col-12">
-        <label for="detalle">Detalle</label>
-        <input id = "detalle"
-               type="text"
-               name="detalle"
-               placeholder="Ingrese los etalles:"
-               formControlName="id"
-               class="form-control">
+
+      <label for="hora">Hora</label>
+      <input id = "hora"
+             type="text"
+             name="hora"
+             placeholder="Escriba la hora aquí"
+             formControlName="hora"
+             class="form-control">
+
+
    </div>
-     </div>
- </div>
-    </div>
 
 
 
@@ -58,8 +58,5 @@
         </table>
       </div>
   <br>
-
-
-
-
+  </div>
   </form>

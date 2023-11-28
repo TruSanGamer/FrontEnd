@@ -47,7 +47,7 @@ export class ListarReservaComponent implements OnInit {
       confirmButtonText: "Si, borra la reserva!"
     }).then((result) => {
       if (result.isConfirmed) {
-        this.reservaService.borrarReserva(reserva.fechaInicio).subscribe(() => { // Llama al servicio para eliminar el curso
+        this.reservaService.borrarReserva(reserva.id).subscribe(() => { // Llama al servicio para eliminar el curso
           Swal.fire({
             title: "Eliminado!",
             text: "La reserva ha sido eliminada.",

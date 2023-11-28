@@ -5,7 +5,7 @@ import {ListarReservaComponent} from "./listar-reserva/listar-reserva.component"
 import {CrearReservaComponent} from "./crear-reserva/crear-reserva.component";
 import {DetalleReservaComponent} from "./detalle-reserva/detalle-reserva.component";
 import {ReactiveFormsModule} from "@angular/forms";
-import { EditarReservaComponent } from './editar-reserva/editar-reserva.component';
+//import { EditarReservaComponent } from './editar-reserva/editar-reserva.component';
 
 
 
@@ -14,7 +14,7 @@ import { EditarReservaComponent } from './editar-reserva/editar-reserva.componen
     ListarReservaComponent,
     CrearReservaComponent,
     DetalleReservaComponent,
-    EditarReservaComponent,
+    //EditarReservaComponent,
 
   ],
   exports: [

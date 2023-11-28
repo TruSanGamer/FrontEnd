@@ -13,7 +13,13 @@ import {Reserva} from "../model/reserva";
 })
 export class CrearReservaComponent implements OnInit {
   public crearReservaForm: FormGroup= new FormGroup({
-    nombre: new FormControl('',[Validators.required,Validators.minLength(4)]),
+
+    id:new FormControl(""),
+    nombresolicitante:new FormControl(""),
+    fecha:new FormControl(""),
+    sala:new FormControl(""),
+    hora:new FormControl(""),
+    estado:new FormControl("")
   });
   /**
    * Constructor del componente
@@ -34,7 +40,7 @@ export class CrearReservaComponent implements OnInit {
         // console.log(curso);
         Swal.fire(
           'reserva creada',
-          `La reserva ${reserva.fechaInicio} ha sido creado con exito`,
+          `La reserva ${reserva.id} ha sido creado con exito`,
           'success'
         );
         this.crearReservaForm.reset();  //Resetea el formulario
@@ -44,7 +50,11 @@ export class CrearReservaComponent implements OnInit {
 
   ngOnInit(): void {
     this.crearReservaForm = this.formBuilder.group({
-      asignatura: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+$/)]]
+      nombresolicitante: [Validators.required,Validators.minLength(4)],
+      fecha: [Validators.required,Validators.minLength(4)],
+      sala: [Validators.required,Validators.minLength(4)],
+      hora: [Validators.required,Validators.minLength(4)]
+
     });
   }
 }
